@@ -165,6 +165,7 @@ var a = ["暴瘦","暴富","爆美丽","心想事成","万事如意","财源滚�
    span.style.transition = ".5s"
    span.style.left = e.clientX - 20 + "px"
    span.style.top = e.clientY -20 + "px"
+   span.style.fontSize = 1+"VW"
    setTimeout(function(){
        span.style.opacity = "1"
        span.style.transform = "translateY(-50px) scale(1.5)"
