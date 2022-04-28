@@ -144,3 +144,42 @@ $(function(){
     createDots();
     requestAnimationFrame(animateDots);	
   });
+
+  //点击文字
+  function bg3(){
+    var r=Math.floor(Math.random()*(170-100)+100);
+    var g=Math.floor(Math.random()*(170-100)+100);
+    var b=Math.floor(Math.random()*(100-90)+90);
+    return "rgb("+r+','+g+','+b+")";//所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
+}
+
+var a = ["暴瘦","暴富","爆美丽","心想事成","万事如意","财源滚滚","学业有成"]
+// var a = ["1.gif","2.gif","3.gif"]
+// setTimeout(function(){
+   document.onclick = function(e){
+   var span = document.createElement("span")
+   // span.innerHTML = "<img src="+a[Math.floor(Math.random()*a.length)]+">"
+   span.innerHTML = a[Math.floor(Math.random()*a.length)]
+   span.style.position = "absolute"
+   span.style.color = bg3()
+   span.style.transition = ".5s"
+   span.style.left = e.clientX - 20 + "px"
+   span.style.top = e.clientY -20 + "px"
+   setTimeout(function(){
+       span.style.opacity = "1"
+       span.style.transform = "translateY(-50px) scale(1.5)"
+   },100)
+   setTimeout(function(){
+       span.style.opacity = "0"
+       span.style.transform = "translateY(-200px) scale(0)"
+   },500)
+   setTimeout(function(){
+       var chi = document.getElementsByTagName("span")
+         for(var i = 0;i<chi.length-1;i++){
+             if(chi[i].style.opacity === "0"){
+                 document.body.removeChild(chi[i])
+             }
+         }
+   },1000)
+  document.body.appendChild(span)
+}

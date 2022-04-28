@@ -61,3 +61,16 @@ canvas { width: 100%; height: 100%; position: absolute; }
     transform: translate(-50%);
     bottom: 30px;
 }
+/* min主体 */
+.mins{
+    color:#ffff;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    z-index: 999;
+}
+/* 生日蛋糕 */
+img{
+    height: 150px;
+    width: 150px;
+}
